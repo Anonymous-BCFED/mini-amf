@@ -16,3 +16,7 @@ dist
 cover
 htmlcov
 .tox/
+.venv/
+vnm.state
+
+.pre-commit-config.yaml

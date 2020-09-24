@@ -4,24 +4,21 @@
 # See LICENSE.txt for details.
 
 import os.path
-from setuptools import Feature, setup
 import sys
 
-try:
-    from Cython.Build import cythonize
-    have_cython = True
-except:
-    have_cython = False
+from setuptools import setup
 
+NAME = "Mini-AMF"
+DESCRIPTION = "AMF serialization and deserialization support for Python"
+URL = "https://github.com/zackw/mini-amf"
+# RIP, ended dev in 2017
+AUTHOR = 'Zack Weinberg, The PyAMF Project'
+AUTHOR_EMAIL = "zackw@panix.com"
+MAINTAINER = 'Mini-AMF Project'
+MAINTAINER_EMAIL = 'friedfrogs888@yahoo.com'
+LICENSE = "MIT License"
 
-name = "Mini-AMF"
-description = "AMF serialization and deserialization support for Python"
-url = "https://github.com/zackw/mini-amf"
-author = "Zack Weinberg, The PyAMF Project"
-author_email = "zackw@panix.com"
-license = "MIT License"
-
-classifiers = """
+CLASSIFIERS = """
 Intended Audience :: Developers
 Intended Audience :: Information Technology
 License :: OSI Approved :: MIT License
@@ -36,39 +33,10 @@ Topic :: Software Development :: Libraries :: Python Modules
 Development Status :: 5 - Production/Stable
 """
 
-keywords = """
+KEYWORDS = """
 amf amf0 amf3 actionscript air flash flashplayer bytearray recordset
 decoder encoder sharedobject lso sol
 """
-
-
-class AccelFeature(Feature):
-    def __init__(self, have_cython):
-        self.have_cython = have_cython
-        self.extensions = []
-
-        Feature.__init__(
-            self,
-            description="optional C accelerator modules (broken)",
-            standard=False,
-            available=have_cython,
-            ext_modules=self.extensions
-        )
-
-    def include_in(self, dist):
-        if not self.have_cython:
-            sys.stderr.write(
-                "ERROR: Cython is required to compile accelerator modules.\n")
-            sys.exit(1)
-
-        sys.stderr.write(
-            "WARNING: Accelerator modules are broken.\n"
-            "WARNING: You should only use --with-accel "
-            "if you are trying to fix them.\n")
-
-        self.extensions.extend(cythonize("miniamf/_accel/*.pyx"))
-        Feature.include_in(self, dist)
-
 
 def get_version():
     """
@@ -134,20 +102,27 @@ def get_long_description():
 
 def setup_package():
     setup(
-        name=name,
+        name=NAME,
         version=get_version(),
-        description=description,
+        description=DESCRIPTION,
         long_description=get_long_description(),
-        url=url,
-        author=author,
-        author_email=author_email,
-        keywords=keywords.split(),
-        license=license,
+        url=URL,
+        author=AUTHOR,
+        author_email=AUTHOR_EMAIL,
+        maintainer=MAINTAINER,
+        maintainer_email=MAINTAINER_EMAIL,
+        keywords=KEYWORDS.split(),
+        license=LICENSE,
         packages=[
-            "miniamf", "miniamf._accel", "miniamf.adapters", "miniamf.util"
+            "miniamf",
+            "miniamf._accel",
+            "miniamf.adapters",
+            "miniamf.util"
         ],
-        install_requires=["six", "defusedxml"],
-        features={"accel": AccelFeature(have_cython)},
+        install_requires=[
+            "six",
+            "defusedxml"
+        ],
         test_suite="tests",
         zip_safe=True,
         extras_require={
@@ -156,7 +131,7 @@ def setup_package():
             ]
         },
         classifiers=[
-            l for l in (ll.strip() for ll in classifiers.splitlines()) if l
+            l for l in (ll.strip() for ll in CLASSIFIERS.splitlines()) if l
         ],
     )
 

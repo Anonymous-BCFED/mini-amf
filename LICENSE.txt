@@ -1,5 +1,6 @@
 Copyright © 2007-2015 The PyAMF Project.
 Copyright © 2017 Zack Weinberg.
+Copyright © 2020 The Mini-AMF Project.
 
 Mini-AMF is available under the terms of the MIT license:
 
