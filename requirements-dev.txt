@@ -1,5 +1,0 @@
-defusedxml==0.6.0
-six==1.15.0
-isort==5.5.3
-mypy==0.782
-sphinx==3.2.1
