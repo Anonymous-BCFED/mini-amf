@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "Mini-AMF"
+version = "0.9.2"
+description = "AMF serialization and deserialization support for Python"
+authors = ["Zack Weinberg, The PyAMF Project <zackw@panix.com>", "Mini-AMF Project <friedfrogs888@yahoo.com>"]
+readme = "README.rst"
+packages = [{include = "mini_amf"}]
+license = "MIT License"
+keywords = ["amf", "amf0", "amf3", "actionscript", "air", "flash", "flashplayer", "bytearray", "recordset", "decoder", "encoder", "sharedobject", "lso", "sol"]
+classifiers = ["Intended Audience :: Developers", "Intended Audience :: Information Technology", "License :: OSI Approved :: MIT License", "Natural Language :: English", "Operating System :: OS Independent", "Programming Language :: C", "Programming Language :: Python", "Programming Language :: Cython", "Programming Language :: Python :: 2.7", "Topic :: Internet :: WWW/HTTP :: WSGI :: Application", "Topic :: Software Development :: Libraries :: Python Modules", "Development Status :: 5 - Production/Stable"]
+homepage = "https://github.com/zackw/mini-amf"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+defusedxml = "^0.7.1"
+six = "^1.16.0"
+
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+mypy = {extras = ["d"], version = "^1.4.0"}
+sphinx = "^7.0.1"
+
+
+[tool.poetry.extras]
+docs = ["sphinx"]
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
