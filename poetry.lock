@@ -553,9 +553,9 @@ socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
 [extras]
-docs = ["sphinx"]
+docs = []
 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<4.0"
-content-hash = "39474830049bd6336466cdc07eedb4006dfa65b9c664fc1f9193dfc334614645"
+content-hash = "97e5feb83c3f3ea8b46ad4a70c12e4952f21d03dab535d84101d0f3f7cedd213"
