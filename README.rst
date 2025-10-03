@@ -1,3 +1,7 @@
+This project is currently receiving maintenance updates by N3X15.
+
+There are no further planned features.
+
 ========
 Mini-AMF
 ========
@@ -21,7 +25,7 @@ accepted, as this interferes with support for Python 3.  Please also
 note that "remoting" and server integration will probably be easier to
 maintain in their own separate packages, one per framework.
 
-**This project is in the process of being overhauled.**
+~~**This project is in the process of being overhauled.**~~
 
 What's AMF?
 -----------

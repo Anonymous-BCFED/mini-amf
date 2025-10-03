@@ -26,13 +26,13 @@ authors = [
     { name = "Zack Weinberg, The PyAMF Project", email = "zackw@panix.com" },
 ]
 requires-python = '>=3.12,<4.0'
-dependencies = ['defusedxml (>=0.7.1,<0.8.0)', 'six (>=1.16.0,<2.0.0)']
+dependencies = ['defusedxml (>=0.7.1,<0.8.0)', "six (>=1.17.0,<2.0.0)"]
 
 [project.urls]
 homepage = "https://github.com/zackw/mini-amf"
 
 [tool.poetry]
-version = "0.9.2"
+version = "0.9.3"
 packages = [{ include = "miniamf" }]
 classifiers = [
     "Intended Audience :: Developers",
@@ -51,8 +51,8 @@ classifiers = [
 requires-poetry = '>=2.0,<3.0'
 
 [tool.poetry.group.dev.dependencies]
-isort = "^5.13.2"
-mypy = { extras = ["d"], version = "^1.8.0" }
+isort = "^6.1.0"
+mypy = { extras = ["d"], version = "^1.18.2" }
 
 
 # [tool.poetry.extras]
