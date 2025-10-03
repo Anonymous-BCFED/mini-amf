@@ -20,13 +20,17 @@ keywords = [
     "sol",
 ]
 dynamic = ["version", "classifiers"]
-readme = "README.rst"
+readme = "README.md"
 authors = [
     { name = "Mini-AMF Project", email = "friedfrogs888@yahoo.com" },
     { name = "Zack Weinberg, The PyAMF Project", email = "zackw@panix.com" },
 ]
 requires-python = '>=3.12,<4.0'
-dependencies = ['defusedxml (>=0.7.1,<0.8.0)', "six (>=1.17.0,<2.0.0)", "setuptools (>=80.9.0,<81.0.0)"]
+dependencies = [
+    'defusedxml (>=0.7.1,<0.8.0)',
+    "six (>=1.17.0,<2.0.0)",
+    "setuptools (>=80.9.0,<81.0.0)",
+]
 
 [project.urls]
 homepage = "https://github.com/zackw/mini-amf"
