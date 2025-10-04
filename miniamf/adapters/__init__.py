@@ -46,11 +46,11 @@ def register_adapters():
     if adapters_registered is True:
         return
 
-    import pkg_resources
-    packageDir = pkg_resources.resource_filename('miniamf', 'adapters')
-
-    for f in glob.glob(os.path.join(packageDir, '*.py')):
-        mod = os.path.basename(f).split(os.path.extsep, 1)[0]
+    from importlib.resources import Package, files
+    for f in files("miniamf.adapters").iterdir():
+        if not f.is_file() or not f.name.endswith('.py'):
+            continue
+        mod = f.name.split(os.path.extsep, 1)[0]
 
         if mod == '__init__' or not mod.startswith('_'):
             continue
