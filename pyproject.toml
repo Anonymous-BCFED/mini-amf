@@ -55,8 +55,8 @@ classifiers = [
 requires-poetry = '>=2.0,<3.0'
 
 [tool.poetry.group.dev.dependencies]
-isort = "^6.1.0"
-mypy = { extras = ["d"], version = "^1.18.2" }
+isort = "^7.0.0"
+mypy = { extras = ["d"], version = "^1.19.0" }
 
 
 # [tool.poetry.extras]
