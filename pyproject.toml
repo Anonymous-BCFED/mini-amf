@@ -1,67 +1,40 @@
+[build-system]
+requires = ["poetry-core<3.0,>=2.0"]
+build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "Mini-AMF"
 description = "AMF serialization and deserialization support for Python"
-license = "MIT License"
-keywords = [
-    "amf",
-    "amf0",
-    "amf3",
-    "actionscript",
-    "air",
-    "flash",
-    "flashplayer",
-    "bytearray",
-    "recordset",
-    "decoder",
-    "encoder",
-    "sharedobject",
-    "lso",
-    "sol",
-]
-dynamic = ["version", "classifiers"]
 readme = "README.md"
+keywords = ["amf", "amf0", "amf3", "actionscript", "air", "flash", "flashplayer", "bytearray", "recordset", "decoder", "encoder", "sharedobject", "lso", "sol"]
+license = "MIT License"
 authors = [
-    { name = "Mini-AMF Project", email = "friedfrogs888@yahoo.com" },
-    { name = "Zack Weinberg, The PyAMF Project", email = "zackw@panix.com" },
+    {name = "Mini-AMF Project", email = "friedfrogs888@yahoo.com"},
+    {name = "Zack Weinberg, The PyAMF Project", email = "zackw@panix.com"},
 ]
-requires-python = '>=3.12,<4.0'
+requires-python = ">=3.12,<4.0"
+dynamic = ["version", "classifiers"]
 dependencies = [
-    'defusedxml (>=0.7.1,<0.8.0)',
-    "six (>=1.17.0,<2.0.0)",
-    "setuptools (>=80.9.0,<81.0.0)",
+    "defusedxml<0.8.0,>=0.7.1",
+    "setuptools<81.0.0,>=80.9.0",
+    "six<2.0.0,>=1.17.0",
 ]
 
 [project.urls]
 homepage = "https://github.com/zackw/mini-amf"
 
+
 [tool.poetry]
 version = "0.9.3"
-packages = [{ include = "miniamf" }]
-classifiers = [
-    "Intended Audience :: Developers",
-    "Intended Audience :: Information Technology",
-    "License :: OSI Approved :: MIT License",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Programming Language :: C",
-    "Programming Language :: Python",
-    "Programming Language :: Cython",
-    "Programming Language :: Python :: 2.7",
-    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Development Status :: 5 - Production/Stable",
-]
-requires-poetry = '>=2.0,<3.0'
+classifiers = ["Intended Audience :: Developers", "Intended Audience :: Information Technology", "License :: OSI Approved :: MIT License", "Natural Language :: English", "Operating System :: OS Independent", "Programming Language :: C", "Programming Language :: Python", "Programming Language :: Cython", "Programming Language :: Python :: 2.7", "Topic :: Internet :: WWW/HTTP :: WSGI :: Application", "Topic :: Software Development :: Libraries :: Python Modules", "Development Status :: 5 - Production/Stable"]
+requires-poetry = ">=2.0,<3.0"
+
+[[tool.poetry.packages]]
+include = "miniamf"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^7.0.0"
-mypy = { extras = ["d"], version = "^1.19.0" }
 
-
-# [tool.poetry.extras]
-# docs = ["sphinx"]
-
-[build-system]
-requires = ['poetry-core (>=2.0,<3.0)']
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.group.dev.dependencies.mypy]
+extras = ["d"]
+version = "^1.19.0"
