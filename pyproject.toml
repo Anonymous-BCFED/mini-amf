@@ -16,7 +16,7 @@ requires-python = ">=3.12,<4.0"
 dynamic = ["version", "classifiers"]
 dependencies = [
     "defusedxml<0.8.0,>=0.7.1",
-    "setuptools<81.0.0,>=80.9.0",
+    "setuptools (>=82.0.0,<83.0.0)",
     "six<2.0.0,>=1.17.0",
 ]
 
@@ -37,4 +37,4 @@ isort = "^7.0.0"
 
 [tool.poetry.group.dev.dependencies.mypy]
 extras = ["d"]
-version = "^1.19.0"
+version = "^1.19.1"
