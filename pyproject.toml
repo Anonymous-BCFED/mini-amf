@@ -15,26 +15,34 @@ authors = [
 requires-python = ">=3.12,<4.0"
 dynamic = ["version", "classifiers"]
 dependencies = [
-    "defusedxml<0.8.0,>=0.7.1",
-    "setuptools (>=82.0.0,<83.0.0)",
-    "six<2.0.0,>=1.17.0",
+    "defusedxml<0.8,>=0.7.1",
+    "setuptools<83,>=82.0.1",
+    "six<2,>=1.17",
 ]
-
-[project.urls]
-homepage = "https://github.com/zackw/mini-amf"
-
+urls.homepage = "https://github.com/zackw/mini-amf"
 
 [tool.poetry]
 version = "0.9.3"
-classifiers = ["Intended Audience :: Developers", "Intended Audience :: Information Technology", "License :: OSI Approved :: MIT License", "Natural Language :: English", "Operating System :: OS Independent", "Programming Language :: C", "Programming Language :: Python", "Programming Language :: Cython", "Programming Language :: Python :: 2.7", "Topic :: Internet :: WWW/HTTP :: WSGI :: Application", "Topic :: Software Development :: Libraries :: Python Modules", "Development Status :: 5 - Production/Stable"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: C",
+    "Programming Language :: Python",
+    "Programming Language :: Cython",
+    "Programming Language :: Python :: 2.7",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Development Status :: 5 - Production/Stable",
+]
+packages = [
+    {include = "miniamf"},
+]
 requires-poetry = ">=2.0,<3.0"
 
-[[tool.poetry.packages]]
-include = "miniamf"
-
 [tool.poetry.group.dev.dependencies]
-isort = "^7.0.0"
+isort = "^8.0.1"
+mypy = {extras = ["d"], version = "^2.1.0"}
 
-[tool.poetry.group.dev.dependencies.mypy]
-extras = ["d"]
-version = "^1.19.1"
