@@ -4,29 +4,31 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "Mini-AMF"
+version = "0.9.3"
 description = "AMF serialization and deserialization support for Python"
 readme = "README.md"
 keywords = ["amf", "amf0", "amf3", "actionscript", "air", "flash", "flashplayer", "bytearray", "recordset", "decoder", "encoder", "sharedobject", "lso", "sol"]
-license = "MIT License"
+license = "MIT"
 authors = [
     {name = "Mini-AMF Project", email = "friedfrogs888@yahoo.com"},
     {name = "Zack Weinberg, The PyAMF Project", email = "zackw@panix.com"},
 ]
 requires-python = ">=3.12,<4.0"
-dynamic = ["version", "classifiers"]
+dynamic = ["classifiers"]
 dependencies = [
     "defusedxml<0.8,>=0.7.1",
-    "setuptools<83,>=82.0.1",
+    "setuptools<85,>=84.2.1",
     "six<2,>=1.17",
 ]
 urls.homepage = "https://github.com/zackw/mini-amf"
 
+[dependency-groups]
+dev = ["isort<10,>=9.0.2", "mypy[d]<3,>=2.4.1"]
+
 [tool.poetry]
-version = "0.9.3"
 classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: Information Technology",
-    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: C",
@@ -40,9 +42,4 @@ classifiers = [
 packages = [
     {include = "miniamf"},
 ]
-requires-poetry = ">=2.0,<3.0"
-
-[tool.poetry.group.dev.dependencies]
-isort = "^8.0.1"
-mypy = {extras = ["d"], version = "^2.1.0"}
-
+requires-poetry = ">=2.2.1,<3.0.0"
